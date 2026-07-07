@@ -1,4 +1,4 @@
-
+from weather import get_weather
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -24,12 +24,17 @@ def dashboard():
         "co2_saved": "18.5 kg",
         "revenue": "₹320"
     }
+weather = get_weather("New Delhi")
 
-    return render_template(
-        "dashboard.html",
-        data=solar_data
-    )
+return render_template(
 
+    "dashboard.html",
+
+    data=solar_data,
+
+    weather=weather
+
+)
 
 @app.route("/analytics")
 def analytics():
