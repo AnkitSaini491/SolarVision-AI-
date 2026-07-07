@@ -170,3 +170,182 @@ max-width:100%;
 }
 
 }
+/* ================= DASHBOARD ================= */
+
+.dashboard{
+
+padding:40px 8%;
+
+}
+
+.dashboard h1{
+
+font-size:42px;
+
+margin-bottom:8px;
+
+}
+
+.dashboard p{
+
+color:#94a3b8;
+
+margin-bottom:35px;
+
+font-size:18px;
+
+}
+
+/* Cards */
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+
+margin-bottom:40px;
+
+}
+
+.card{
+
+background:#1e293b;
+
+padding:25px;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+transition:.3s;
+
+border:1px solid rgba(255,255,255,.08);
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+background:#22c55e;
+
+}
+
+.card h3{
+
+font-size:18px;
+
+margin-bottom:15px;
+
+}
+
+.card h2{
+
+font-size:32px;
+
+font-weight:700;
+
+}
+
+/* Chart */
+
+.chart-section{
+
+background:#1e293b;
+
+padding:30px;
+
+border-radius:20px;
+
+margin-bottom:35px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+}
+
+.chart-section h2{
+
+margin-bottom:20px;
+
+}
+
+/* AI Insights */
+
+.insights{
+
+background:#1e293b;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+}
+
+.insights h2{
+
+margin-bottom:20px;
+
+}
+
+.insights ul{
+
+list-style:none;
+
+}
+
+.insights li{
+
+padding:12px 0;
+
+font-size:17px;
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.insights li:last-child{
+
+border-bottom:none;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.dashboard{
+
+padding:25px;
+
+}
+
+.dashboard h1{
+
+font-size:30px;
+
+}
+
+.dashboard p{
+
+font-size:16px;
+
+}
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+.card h2{
+
+font-size:26px;
+
+}
+
+}
