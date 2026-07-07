@@ -1,1 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SolarVision AI Dashboard</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+
+☀️ SolarVision AI
+
+</div>
+
+<ul>
+
+<li><a href="/">Home</a></li>
+
+<li><a href="/dashboard">Dashboard</a></li>
+
+<li><a href="/analytics">Analytics</a></li>
+
+</ul>
+
+</nav>
+
+<div class="dashboard">
+
+<h1>{{ data.plant_name }}</h1>
+
+<p>{{ data.location }}</p>
+
+<div class="cards">
+
+<div class="card">
+
+<h3>☀️ Current Power</h3>
+
+<h2>{{ data.current_power }}</h2>
+
+</div>
+
+<div class="card">
+
+<h3>⚡ Today Energy</h3>
+
+<h2>{{ data.today_energy }}</h2>
+
+</div>
+
+<div class="card">
+
+<h3>🔋 Battery</h3>
+
+<h2>{{ data.battery }}</h2>
+
+</div>
+
+<div class="card">
+
+<h3>⚡ Grid</h3>
+
+<h2>{{ data.grid }}</h2>
+
+</div>
+
+<div class="card">
+
+<h3>🌤 Weather</h3>
+
+<h2>{{ data.weather }}</h2>
+
+</div>
+
+<div class="card">
+
+<h3>🌡 Temperature</h3>
+
+<h2>{{ data.temperature }}</h2>
+
+</div>
+
+<div class="card">
+
+<h3>💰 Revenue</h3>
+
+<h2>{{ data.revenue }}</h2>
+
+</div>
+
+<div class="card">
+
+<h3>🌱 CO₂ Saved</h3>
+
+<h2>{{ data.co2_saved }}</h2>
+
+</div>
+
+</div>
+
+<div class="chart-section">
+
+<h2>📈 Solar Generation</h2>
+
+<canvas id="solarChart"></canvas>
+
+</div>
+
+<div class="insights">
+
+<h2>🤖 AI Insights</h2>
+
+<ul>
+
+<li>✅ Solar production is performing normally.</li>
+
+<li>☀️ Best production time: 12 PM - 2 PM.</li>
+
+<li>🔋 Battery level is healthy.</li>
+
+<li>⚡ Grid export is active.</li>
+
+<li>🌤 Weather conditions are ideal.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<script>
+
+const ctx = document.getElementById('solarChart');
+
+new Chart(ctx, {
+
+type:'line',
+
+data:{
+
+labels:['6 AM','8 AM','10 AM','12 PM','2 PM','4 PM','6 PM'],
+
+datasets:[{
+
+label:'Solar Output (kW)',
+
+data:[0.5,2.8,5.6,8.4,7.9,5.2,1.8],
+
+borderColor:'#22c55e',
+
+backgroundColor:'rgba(34,197,94,.2)',
+
+fill:true,
+
+tension:.4
+
+}]
+
+}
+
+});
+
+</script>
+
+</body>
+
+</html>
